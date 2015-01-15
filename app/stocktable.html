@@ -1,0 +1,31 @@
+<table border="1" width="900px" height="100px" id="{{header}}">
+  <thead>
+    <tr>
+      <th colspan="9">{{header}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="headers">
+      <td><strong>Symbol</strong></td>
+      <td><strong>Change</strong></td>
+      <td><strong>Days High</strong></td>
+      <td><strong>Days Low</strong></td>
+      <td><strong>Last Trade Date</strong></td>
+      <td><strong>Last Trade Price</strong></td>
+      <td><strong>Last Trade Time</strong></td>
+      <td><strong>Volume</strong></td>
+      <td><strong>Open</strong></td>
+    </tr>
+    <tr ng-class="{open: stock.Open}" ng-repeat="stock in collection">
+      <td><strong>{{stock.Symbol.replace('^', '')}}</strong></td>
+      <td>{{stock.Change}}%</td>
+      <td>{{stock.DaysHigh}}</td>
+      <td>{{stock.DaysLow}}</td>
+      <td>{{stock.LastTradeDate}}</td>
+      <td>{{stock.LastTradePriceOnly}}</td>
+      <td>{{stock.LastTradeTime}}</td>
+      <td>{{stock.Volume}}</td>
+      <td>{{stock.Open}}</td>
+    </tr>
+  </tbody>
+</table>
