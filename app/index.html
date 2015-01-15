@@ -18,7 +18,40 @@
   <body ng-app="StockIndexTracker">
 
     <div ng-controller="StockController">
-      
+      <h1>World Stock Indexes Dashboard</h1>
+      <div id="dashboard">
+        <table border="1" id="america" width="900px" height="100px">
+          <thead>
+            <tr>
+              <th colspan="9">America</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="headers">
+              <td>Symbol</td>
+              <td>Change</td>
+              <td>Days High</td>
+              <td>Days Low</td>
+              <td>Last Trade Date</td>
+              <td>Last Trade Price</td>
+              <td>Last Trade Time</td>
+              <td>Volume</td>
+              <td>Open</td>
+            </tr>
+            <tr class="info" ng-repeat="stock in americaStockIndexes" ng-show="stock.Open">
+              <td>{{stock.Symbol.replace('^', '')}}</td>
+              <td>{{stock.Change}}%</td>
+              <td>{{stock.DaysHigh}}</td>
+              <td>{{stock.DaysLow}}</td>
+              <td>{{stock.LastTradeDate}}</td>
+              <td>{{stock.LastTradePriceOnly}}</td>
+              <td>{{stock.LastTradetime}}</td>
+              <td>{{stock.Volume}}</td>
+              <td>{{stock.Open}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
