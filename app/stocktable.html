@@ -6,16 +6,7 @@
   </thead>
   <tbody>
     <tr class="headers">
-      <td><strong>Symbol</strong></td>
-      <td><strong>Name</strong></td>
-      <td><strong>Change</strong></td>
-      <td><strong>Days High</strong></td>
-      <td><strong>Days Low</strong></td>
-      <td><strong>Last Trade Date</strong></td>
-      <td><strong>Last Trade Price</strong></td>
-      <td><strong>Last Trade Time</strong></td>
-      <td><strong>Volume</strong></td>
-      <td><strong>Open</strong></td>
+      <td ng-repeat="header in tableHeaders"><strong>{{header}}</strong></td>
     </tr>
     <tr ng-repeat="stock in collection" ng-class="{profit: stock.Change > 0, loss: stock.Change < 0}">
       <td><strong>{{stock.Symbol}}</strong></td>

@@ -4,6 +4,10 @@ app.controller('StockController', ['yahooFactory', '$scope', function(yahooFacto
 
 
   var americaIndexesUrl, europeMideastAfricaIndexesUrl, asiaPacificIndexesUrl;
+
+  $scope.tableHeaders = ['Symbol', 'Name', 'Change', 'Days High', 'Days Low', 'Last Trade Date', 'Last Trade Price', 'Last Trade Time', 'Volume', 'Open'];
+
+
   // America World Stock Indexes
   americaIndexesUrl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20IN('INDU'%2C%20'%5EGSPC'%2C%20'%5EIXIC'%2C%20'%5EGSPTSE'%2C%20'%5EMXX'%2C%20'%5EBVSP')&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
   yahooFactory.fetchStockData(americaIndexesUrl).then(function(response) {
@@ -32,7 +36,8 @@ app.directive('stockTable', function() {
     templateUrl: 'stocktable.html',
     scope: {
       header: '@',
-      collection: '='
+      collection: '=',
+      tableHeaders: '='
     }
   };
 });
