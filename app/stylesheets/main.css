@@ -8,7 +8,7 @@
 /* line 6, ../sass/main.sass */
 table {
   position: relative;
-  left: 15%;
+  left: 8%;
   top: 36px;
   margin: 62px 0%;
 }
@@ -39,7 +39,13 @@ header h1 {
 }
 
 /* line 30, ../sass/main.sass */
-.open {
+.profit {
   background-color: #13440b;
   color: white;
+}
+
+/* line 34, ../sass/main.sass */
+.loss {
+  background-color: rgba(170, 24, 24, 0.89);
+  color: black;
 }
